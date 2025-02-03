@@ -1,10 +1,11 @@
 import AuthLayout from "../../../components/auth/authLayout/AuthLayout";
+import ForgetPasswordForm from "../../../components/auth/forgetPasswordForm/ForgetPasswordForm";
 
 function ForgetPassword() {
   return (
     <>
       <AuthLayout>
-        <h1>Forget Password</h1>
+        <ForgetPasswordForm />
       </AuthLayout>
     </>
   );

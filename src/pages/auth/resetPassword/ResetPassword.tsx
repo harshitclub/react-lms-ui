@@ -1,10 +1,11 @@
 import AuthLayout from "../../../components/auth/authLayout/AuthLayout";
+import ResetPasswordForm from "../../../components/auth/resetPasswordForm/ResetPasswordForm";
 
 function ResetPassword() {
   return (
     <>
       <AuthLayout>
-        <h1>Reset Password</h1>
+        <ResetPasswordForm />
       </AuthLayout>
     </>
   );

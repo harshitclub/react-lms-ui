@@ -1,8 +1,0 @@
-.auth > .authContainer > .authLeft {
-  background: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.8)),
-    url(../../../assets/exImages/loginImage.jpg);
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}

@@ -1,0 +1,13 @@
+.auth > .authContainer > .authLeft {
+  background: url(../../assets/exImages/loginImage.jpg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.authForm {
+  height: 100vh;
+}
+
+/* linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.8)), */
