@@ -29,10 +29,9 @@ function SignupForm() {
             placeholder="+91 8888 8888 88"
             className="mb-2"
           />
-          <h3 className="text-md font-semibold mb-2">Set Password</h3>
+          <h3 className="text-md font-semibold mb-2">Password</h3>
           <Input type="password" placeholder="**********" className="mb-2" />
-          <h3 className="text-md font-semibold mb-3">Confirm Password</h3>
-          <Input type="password" placeholder="**********" className="mb-2" />
+
           <h3 className="text-md font-semibold mb-1">Account Type</h3>
           <Select>
             <SelectTrigger className="w-full mb-2">
