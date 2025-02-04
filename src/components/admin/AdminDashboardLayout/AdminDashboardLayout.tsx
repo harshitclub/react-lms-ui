@@ -7,7 +7,7 @@ function AdminDashboardLayout() {
     <>
       <SidebarProvider className="flex h-screen">
         <AdminSidebar />
-        <main className="flex-1 p-3">
+        <main className="flex-1 ">
           <DashNav />
         </main>
       </SidebarProvider>
