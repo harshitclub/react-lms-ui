@@ -34,14 +34,22 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "../../ui/collapsible";
+// import { Card, CardDescription, CardHeader, CardTitle } from "../../ui/card";
 
 export function AdminSidebar() {
   return (
     <Sidebar>
-      <SidebarHeader>3a Learning Solutions</SidebarHeader>
-      <SidebarContent>
-        <SidebarMenu></SidebarMenu>
+      <SidebarHeader className=" text-lg font-medium pt-4 pb-5 border-b">
+        {/* <Card className="rounded-sm">
+          <CardHeader className="pt-5 pb-5 pr-2 pl-2">
+            <CardTitle>3a Learning Solutions</CardTitle>
+            <CardDescription>Training & Consulting Company</CardDescription>
+          </CardHeader>
+        </Card> */}
+        3a Learning Solutions
+      </SidebarHeader>
 
+      <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
