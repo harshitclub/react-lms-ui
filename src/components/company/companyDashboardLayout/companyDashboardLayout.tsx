@@ -1,12 +1,12 @@
 import DashNav from "../../shared/DashNav";
 import { SidebarProvider } from "../../ui/sidebar";
-import { AdminSidebar } from "../adminSidebar/AdminSidebar";
+import { CompanySidebar } from "../companySidebar/companySidebar";
 
-function AdminDashboardLayout({ children }: { children: React.ReactNode }) {
+function CompanyDashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <SidebarProvider className="flex h-screen">
-        <AdminSidebar />
+        <CompanySidebar />
         <main className="flex-1 ">
           <DashNav />
           {children}
@@ -16,4 +16,4 @@ function AdminDashboardLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default AdminDashboardLayout;
+export default CompanyDashboardLayout;

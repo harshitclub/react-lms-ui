@@ -1,7 +1,6 @@
 import {
   Bookmark,
   BriefcaseBusiness,
-  Building2,
   ChevronRight,
   CircleHelp,
   LayoutDashboard,
@@ -10,7 +9,6 @@ import {
   Settings,
   SquarePlay,
   SwatchBook,
-  User,
   UserCog,
   Users,
 } from "lucide-react";
@@ -33,7 +31,7 @@ import {
   CollapsibleTrigger,
 } from "../../ui/collapsible";
 
-export function AdminSidebar() {
+export function CompanySidebar() {
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader className="font-medium pt-2 pb-2 pl-0 border-b">
@@ -42,7 +40,7 @@ export function AdminSidebar() {
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
                 <span>
-                  <BriefcaseBusiness /> 3a Learning Solutions
+                  <BriefcaseBusiness /> Campussutras
                 </span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -55,7 +53,7 @@ export function AdminSidebar() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
-                <a href="/admin">
+                <a href="/company">
                   <LayoutDashboard />
                   <span>Dashboard</span>
                 </a>
@@ -64,37 +62,7 @@ export function AdminSidebar() {
 
             <SidebarGroupLabel>General</SidebarGroupLabel>
 
-            <Collapsible asChild className="group/collapsible">
-              <SidebarMenuItem>
-                <CollapsibleTrigger asChild>
-                  <SidebarMenuButton>
-                    <Building2 />
-                    <span>Company</span>
-                    <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                  </SidebarMenuButton>
-                </CollapsibleTrigger>
-                <CollapsibleContent>
-                  <SidebarMenuSub>
-                    <SidebarMenuSubItem>
-                      <SidebarMenuSubButton asChild>
-                        <a href="/admin/companies">
-                          <Menu />
-                          <span>Companies</span>
-                        </a>
-                      </SidebarMenuSubButton>
-                      <SidebarMenuSubButton asChild>
-                        <a href="/admin/companies/add">
-                          <Plus />
-                          <span>Add Company</span>
-                        </a>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  </SidebarMenuSub>
-                </CollapsibleContent>
-              </SidebarMenuItem>
-            </Collapsible>
-
-            <Collapsible asChild className="group/collapsible">
+            <Collapsible asChild className="group/collapsible" defaultOpen>
               <SidebarMenuItem>
                 <CollapsibleTrigger asChild>
                   <SidebarMenuButton>
@@ -107,45 +75,15 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin/employees">
+                        <a href="/admin">
                           <Menu />
                           <span>Employees</span>
                         </a>
                       </SidebarMenuSubButton>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin/employees/add">
+                        <a href="/admin">
                           <Plus />
                           <span>Add Employee</span>
-                        </a>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  </SidebarMenuSub>
-                </CollapsibleContent>
-              </SidebarMenuItem>
-            </Collapsible>
-
-            <Collapsible asChild className="group/collapsible">
-              <SidebarMenuItem>
-                <CollapsibleTrigger asChild>
-                  <SidebarMenuButton>
-                    <User />
-                    <span>Individual</span>
-                    <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                  </SidebarMenuButton>
-                </CollapsibleTrigger>
-                <CollapsibleContent>
-                  <SidebarMenuSub>
-                    <SidebarMenuSubItem>
-                      <SidebarMenuSubButton asChild>
-                        <a href="/admin">
-                          <Menu />
-                          <span>Individuals</span>
-                        </a>
-                      </SidebarMenuSubButton>
-                      <SidebarMenuSubButton asChild>
-                        <a href="/admin">
-                          <Plus />
-                          <span>Add Individual</span>
                         </a>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
