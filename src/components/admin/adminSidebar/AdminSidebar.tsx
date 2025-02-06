@@ -137,13 +137,13 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin">
+                        <a href="/admin/individuals">
                           <Menu />
                           <span>Individuals</span>
                         </a>
                       </SidebarMenuSubButton>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin">
+                        <a href="/admin/individuals/add">
                           <Plus />
                           <span>Add Individual</span>
                         </a>
@@ -169,13 +169,13 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin">
+                        <a href="/admin/courses">
                           <Menu />
                           <span>Courses</span>
                         </a>
                       </SidebarMenuSubButton>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin">
+                        <a href="/admin/courses/add">
                           <Plus />
                           <span>Add Course</span>
                         </a>

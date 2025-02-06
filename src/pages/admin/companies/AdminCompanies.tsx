@@ -3,7 +3,7 @@ import AdminDashboardLayout from "../../../components/admin/AdminDashboardLayout
 import {
   AdminCompanyTable,
   Company,
-} from "../../../components/admin/adminTable/columns";
+} from "../../../components/admin/adminTable/companyTable";
 
 const data: Company[] = [
   {

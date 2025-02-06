@@ -7,6 +7,12 @@ import VerifyAccount from "./pages/auth/verifyAccount/VerifyAccount";
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard";
 import CompanyDashboard from "./pages/company/dashboard/CompanyDashboard";
 import AdminCompanies from "./pages/admin/companies/AdminCompanies";
+import AdminEmployees from "./pages/admin/employees/AdminEmployees";
+import AdminIndividuals from "./pages/admin/individuals/AdminIndividuals";
+import AdminCreateCompany from "./pages/admin/companies/CreateCompany";
+import AdminCreateIndividual from "./pages/admin/individuals/CreateIndividual";
+import AdminCreateEmployee from "./pages/admin/employees/CreateEmployee";
+import AdminCourses from "./pages/admin/courses/AdminCourses";
 
 function App() {
   return (
@@ -19,6 +25,15 @@ function App() {
         <Route path="/verify/:token" element={<VerifyAccount />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/companies" element={<AdminCompanies />} />
+        <Route path="/admin/companies/add" element={<AdminCreateCompany />} />
+        <Route path="/admin/employees" element={<AdminEmployees />} />
+        <Route path="/admin/employees/add" element={<AdminCreateEmployee />} />
+        <Route path="/admin/individuals" element={<AdminIndividuals />} />
+        <Route
+          path="/admin/individuals/add"
+          element={<AdminCreateIndividual />}
+        />
+        <Route path="/admin/courses" element={<AdminCourses />} />
         <Route path="/company" element={<CompanyDashboard />} />
       </Routes>
     </>

@@ -15,13 +15,13 @@ function DashNav() {
                 <a href="/admin">Home</a>
               </li>
               <li>
-                <a href="/admin">Companies</a>
+                <a href="/admin/companies">Companies</a>
               </li>
               <li>
-                <a href="/admin">Employees</a>
+                <a href="/admin/employees">Employees</a>
               </li>
               <li>
-                <a href="/admin">Individuals</a>
+                <a href="/admin/individuals">Individuals</a>
               </li>
             </ul>
           </div>
