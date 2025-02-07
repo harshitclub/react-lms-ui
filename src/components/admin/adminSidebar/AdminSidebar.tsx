@@ -32,6 +32,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "../../ui/collapsible";
+import { Link } from "react-router";
 
 export function AdminSidebar() {
   return (
@@ -55,10 +56,10 @@ export function AdminSidebar() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
-                <a href="/admin">
+                <Link to="/admin">
                   <LayoutDashboard />
                   <span>Dashboard</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
 
@@ -77,16 +78,16 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin/companies">
+                        <Link to="/admin/companies">
                           <Menu />
                           <span>Companies</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin/companies/add">
+                        <Link to="/admin/companies/add">
                           <Plus />
                           <span>Add Company</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -107,16 +108,16 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin/employees">
+                        <Link to="/admin/employees">
                           <Menu />
                           <span>Employees</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin/employees/add">
+                        <Link to="/admin/employees/add">
                           <Plus />
                           <span>Add Employee</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -137,16 +138,16 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin/individuals">
+                        <Link to="/admin/individuals">
                           <Menu />
                           <span>Individuals</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin/individuals/add">
+                        <Link to="/admin/individuals/add">
                           <Plus />
                           <span>Add Individual</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -169,16 +170,16 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin/courses">
+                        <Link to="/admin/courses">
                           <Menu />
                           <span>Courses</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin/courses/add">
+                        <Link to="/admin/courses/add">
                           <Plus />
                           <span>Add Course</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -199,10 +200,10 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin">
+                        <Link to="/admin">
                           <Menu />
                           <span>Videos</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -222,10 +223,10 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin">
+                        <Link to="/admin">
                           <Menu />
                           <span>Assessments</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -247,10 +248,10 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin">
+                        <Link to="/admin">
                           <UserCog />
                           <span>Account</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>

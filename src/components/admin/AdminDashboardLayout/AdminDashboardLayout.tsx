@@ -1,4 +1,4 @@
-import DashNav from "../../shared/DashNav";
+import DashNav from "../adminNav/adminDashNav";
 import { SidebarProvider } from "../../ui/sidebar";
 import { AdminSidebar } from "../adminSidebar/AdminSidebar";
 

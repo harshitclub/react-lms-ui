@@ -1,10 +1,10 @@
-import AdminDashboardLayout from "../../../components/admin/AdminDashboardLayout/AdminDashboardLayout";
+import CompanyDashboardLayout from "../../../components/company/companyDashboardLayout/companyDashboardLayout";
 import {
-  AdminEmployee,
-  AdminEmployeeTable,
-} from "../../../components/admin/adminTable/employeeTable";
+  CompanyEmployee,
+  CompanyEmployeeTable,
+} from "../../../components/company/companyTable/employeeTable";
 
-const data: AdminEmployee[] = [
+const data: CompanyEmployee[] = [
   {
     id: "1",
     fullName: "John Doe",
@@ -15,7 +15,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-07-05T10:30:00Z",
-    company: "Company A",
   },
   {
     id: "2",
@@ -27,7 +26,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-06-15T15:00:00Z",
-    company: "Company B",
   },
   {
     id: "3",
@@ -39,7 +37,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-08-20T09:45:00Z",
-    company: "Company A",
   },
   {
     id: "4",
@@ -51,7 +48,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-07-10T12:00:00Z",
-    company: "Company C",
   },
   {
     id: "5",
@@ -63,7 +59,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-09-01T16:30:00Z",
-    company: "Company B",
   },
   {
     id: "6",
@@ -75,7 +70,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-07-25T08:15:00Z",
-    company: "Company A",
   },
   {
     id: "7",
@@ -87,7 +81,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-08-10T11:00:00Z",
-    company: "Company C",
   },
   {
     id: "8",
@@ -99,7 +92,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-09-05T14:45:00Z",
-    company: "Company B",
   },
   {
     id: "9",
@@ -111,7 +103,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-07-18T13:30:00Z",
-    company: "Company A",
   },
   {
     id: "10",
@@ -123,7 +114,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-09-12T17:15:00Z",
-    company: "Company C",
   },
   {
     id: "11",
@@ -135,7 +125,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-07-28T09:00:00Z",
-    company: "Company B",
   },
   {
     id: "12",
@@ -147,7 +136,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-08-15T12:30:00Z",
-    company: "Company A",
   },
   {
     id: "13",
@@ -159,7 +147,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-09-18T15:45:00Z",
-    company: "Company C",
   },
   {
     id: "14",
@@ -171,7 +158,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-07-30T11:15:00Z",
-    company: "Company B",
   },
   {
     id: "15",
@@ -183,7 +169,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-08-22T14:00:00Z",
-    company: "Company A",
   },
   {
     id: "16",
@@ -195,7 +180,6 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-09-20T16:30:00Z",
-    company: "Company C",
   },
   {
     id: "17",
@@ -207,20 +191,19 @@ const data: AdminEmployee[] = [
     status: "ACTIVE",
     isVerified: true,
     createdAt: "2024-08-01T13:15:00Z",
-    company: "Company B",
   },
 ];
 
-function AdminEmployees() {
+function CompanyEmployees() {
   return (
     <>
-      <AdminDashboardLayout>
-        <section className="adminEmployees p-3">
-          <AdminEmployeeTable data={data} />
+      <CompanyDashboardLayout>
+        <section className="companyEmployees p-3">
+          <CompanyEmployeeTable data={data} />
         </section>
-      </AdminDashboardLayout>
+      </CompanyDashboardLayout>
     </>
   );
 }
 
-export default AdminEmployees;
+export default CompanyEmployees;

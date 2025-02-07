@@ -35,7 +35,7 @@ import {
 import { Input } from "../../ui/input";
 import React from "react";
 
-export type AdminEmployee = {
+export type CompanyEmployee = {
   id?: string;
   fullName: string;
   email: string;
@@ -45,10 +45,9 @@ export type AdminEmployee = {
   status: "ACTIVE" | "INACTIVE" | "BLOCKED";
   isVerified: boolean;
   createdAt: string;
-  company: string;
 };
 
-export function AdminEmployeeTable({ data }: { data: AdminEmployee[] }) {
+export function CompanyEmployeeTable({ data }: { data: CompanyEmployee[] }) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -56,7 +55,7 @@ export function AdminEmployeeTable({ data }: { data: AdminEmployee[] }) {
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
-  const columns: ColumnDef<AdminEmployee>[] = [
+  const columns: ColumnDef<CompanyEmployee>[] = [
     {
       id: "select",
       header: ({ table }) => (
@@ -122,13 +121,7 @@ export function AdminEmployeeTable({ data }: { data: AdminEmployee[] }) {
         </div>
       ),
     },
-    {
-      accessorKey: "company",
-      header: "Company",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("company")}</div>
-      ),
-    },
+
     {
       id: "actions",
       enableHiding: false,

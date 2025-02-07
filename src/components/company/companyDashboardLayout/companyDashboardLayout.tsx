@@ -1,5 +1,5 @@
-import DashNav from "../../shared/DashNav";
 import { SidebarProvider } from "../../ui/sidebar";
+import DashCompanyNav from "../companyNav/dashCompanyNav";
 import { CompanySidebar } from "../companySidebar/companySidebar";
 
 function CompanyDashboardLayout({ children }: { children: React.ReactNode }) {
@@ -8,7 +8,7 @@ function CompanyDashboardLayout({ children }: { children: React.ReactNode }) {
       <SidebarProvider className="flex h-screen">
         <CompanySidebar />
         <main className="flex-1 ">
-          <DashNav />
+          <DashCompanyNav />
           {children}
         </main>
       </SidebarProvider>

@@ -1,4 +1,6 @@
+import { Dot } from "lucide-react";
 import AdminDashboardLayout from "../../../components/admin/AdminDashboardLayout/AdminDashboardLayout";
+import { Badge } from "../../../components/ui/badge";
 import {
   Card,
   CardContent,
@@ -49,36 +51,41 @@ const recentCompanies = [
   },
 ];
 
-const recentEmployees = [
+const recentIndividuals = [
   {
-    empId: "HK0001",
+    id: "1",
     fullName: "Harshit Kumar",
-    status: "active",
+    status: "ACTIVE",
     email: "harshitclub@gmail.com",
+    phone: 9876543210,
   },
   {
-    empId: "HK0001",
+    id: "2",
     fullName: "Harshit Kumar",
-    status: "active",
+    status: "ACTIVE",
     email: "harshitclub@gmail.com",
+    phone: 9876543210,
   },
   {
-    empId: "HK0001",
+    id: "3",
     fullName: "Harshit Kumar",
-    status: "active",
+    status: "ACTIVE",
     email: "harshitclub@gmail.com",
+    phone: 9876543210,
   },
   {
-    empId: "HK0001",
+    id: "4",
     fullName: "Harshit Kumar",
-    status: "active",
+    status: "ACTIVE",
     email: "harshitclub@gmail.com",
+    phone: 9876543210,
   },
   {
-    empId: "HK0001",
+    id: "5",
     fullName: "Harshit Kumar",
-    status: "active",
+    status: "ACTIVE",
     email: "harshitclub@gmail.com",
+    phone: 9876543210,
   },
 ];
 
@@ -102,7 +109,7 @@ function AdminDashboard() {
                 <CardDescription>Total number of employees</CardDescription>
               </CardContent>
             </Card>
-            <Card className="w-1/4 shadow-2xs">
+            <Card className="w-1/4 shadow-2xs ">
               <CardHeader>Individual</CardHeader>
               <CardContent>
                 <CardTitle className="text-4xl">23</CardTitle>
@@ -124,7 +131,7 @@ function AdminDashboard() {
                 <TableHeader>
                   <TableRow>
                     <TableHead className="w-[100px]">Company ID</TableHead>
-                    <TableHead>Full Name</TableHead>
+                    <TableHead>Name</TableHead>
                     <TableHead>Email</TableHead>
                     <TableHead className="text-center">Plan</TableHead>
                   </TableRow>
@@ -138,7 +145,7 @@ function AdminDashboard() {
                       <TableCell>{company.fullName}</TableCell>
                       <TableCell>{company.email}</TableCell>
                       <TableCell className="text-center">
-                        {company.plan}
+                        <Badge>{company.plan}</Badge>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -150,23 +157,24 @@ function AdminDashboard() {
                 <TableCaption>A list of recent 5 individuals.</TableCaption>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="w-[100px]">Company ID</TableHead>
-                    <TableHead>Full Name</TableHead>
+                    <TableHead>Name</TableHead>
                     <TableHead>Email</TableHead>
-                    <TableHead className="text-right">Status</TableHead>
+                    <TableHead>Status</TableHead>
+                    <TableHead>Phone</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {recentEmployees.map((employee) => (
-                    <TableRow key={employee.empId}>
-                      <TableCell className="font-medium">
-                        {employee.empId}
+                  {recentIndividuals.map((ind) => (
+                    <TableRow key={ind.id}>
+                      <TableCell>{ind.fullName}</TableCell>
+                      <TableCell>{ind.email}</TableCell>
+                      <TableCell>
+                        <Badge variant="secondary">
+                          {ind.status}
+                          <Dot style={{ color: "green" }} />
+                        </Badge>
                       </TableCell>
-                      <TableCell>{employee.fullName}</TableCell>
-                      <TableCell>{employee.email}</TableCell>
-                      <TableCell className="text-right">
-                        {employee.status}
-                      </TableCell>
+                      <TableCell>{ind.phone}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

@@ -13,6 +13,9 @@ import AdminCreateCompany from "./pages/admin/companies/CreateCompany";
 import AdminCreateIndividual from "./pages/admin/individuals/CreateIndividual";
 import AdminCreateEmployee from "./pages/admin/employees/CreateEmployee";
 import AdminCourses from "./pages/admin/courses/AdminCourses";
+import CompanyEmployees from "./pages/company/employees/CompanyEmployees";
+import CompanyCreateEmployee from "./pages/company/employees/CreateEmployee";
+import CompanyCourses from "./pages/company/courses/CompanyCourses";
 
 function App() {
   return (
@@ -35,6 +38,12 @@ function App() {
         />
         <Route path="/admin/courses" element={<AdminCourses />} />
         <Route path="/company" element={<CompanyDashboard />} />
+        <Route path="/company/employees" element={<CompanyEmployees />} />
+        <Route
+          path="/company/employees/add"
+          element={<CompanyCreateEmployee />}
+        />
+        <Route path="/company/courses" element={<CompanyCourses />} />
       </Routes>
     </>
   );
