@@ -10,7 +10,6 @@ import {
 } from "../../ui/dropdown-menu";
 import { Button } from "../../ui/button";
 import { ArrowUpDown, ChevronDown, Dot, MoreHorizontal } from "lucide-react";
-import { Checkbox } from "../../ui/checkbox";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -58,33 +57,12 @@ export function AdminCompanyTable({ data }: { data: Company[] }) {
   const columns: ColumnDef<Company>[] = [
     {
       id: "sno",
-      header: "S.No.",
-      cell: ({ row }) => <div>{row.index + 1}</div>,
+      header: () => <div className="text-center">S.No.</div>,
+      cell: ({ row }) => <div className="text-center">{row.index + 1}</div>,
       enableSorting: false,
       enableHiding: false,
     },
-    {
-      id: "select",
-      header: ({ table }) => (
-        <Checkbox
-          checked={
-            table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && "indeterminate")
-          }
-          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Select all"
-        />
-      ),
-      cell: ({ row }) => (
-        <Checkbox
-          checked={row.getIsSelected()}
-          onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
-        />
-      ),
-      enableSorting: false,
-      enableHiding: false,
-    },
+
     {
       accessorKey: "fullName",
       header: "Name",
