@@ -1,8 +1,10 @@
+import { ArrowDownToLine, CirclePlus } from "lucide-react";
 import CompanyDashboardLayout from "../../../components/company/companyDashboardLayout/companyDashboardLayout";
 import {
   CompanyEmployee,
   CompanyEmployeeTable,
 } from "../../../components/company/companyTable/employeeTable";
+import { Button } from "../../../components/ui/button";
 
 const data: CompanyEmployee[] = [
   {
@@ -11,6 +13,7 @@ const data: CompanyEmployee[] = [
     email: "john.doe@example.com",
     companyId: "company1",
     phone: "123-456-7890",
+    department: "Product Service Development",
     jobTitle: "Software Engineer",
     status: "ACTIVE",
     isVerified: true,
@@ -22,6 +25,7 @@ const data: CompanyEmployee[] = [
     email: "jane.smith@example.com",
     companyId: "company2",
     phone: "987-654-3210",
+    department: "Product Service Development",
     jobTitle: "Project Manager",
     status: "ACTIVE",
     isVerified: true,
@@ -33,6 +37,7 @@ const data: CompanyEmployee[] = [
     email: "david.lee@example.com",
     companyId: "company1",
     phone: "555-123-4567",
+    department: "Product Service Development",
     jobTitle: "Marketing Manager",
     status: "ACTIVE",
     isVerified: true,
@@ -44,6 +49,7 @@ const data: CompanyEmployee[] = [
     email: "sarah.jones@example.com",
     companyId: "company3",
     phone: "111-222-3333",
+    department: "Product Service Development",
     jobTitle: "UI/UX Designer",
     status: "ACTIVE",
     isVerified: true,
@@ -55,6 +61,7 @@ const data: CompanyEmployee[] = [
     email: "michael.brown@example.com",
     companyId: "company2",
     phone: "444-555-6666",
+    department: "Product Service Development",
     jobTitle: "Data Analyst",
     status: "ACTIVE",
     isVerified: true,
@@ -66,6 +73,7 @@ const data: CompanyEmployee[] = [
     email: "emily.davis@example.com",
     companyId: "company1",
     phone: "777-888-9999",
+    department: "Product Service Development",
     jobTitle: "Software Engineer",
     status: "ACTIVE",
     isVerified: true,
@@ -77,6 +85,7 @@ const data: CompanyEmployee[] = [
     email: "daniel.wilson@example.com",
     companyId: "company3",
     phone: "222-333-4444",
+    department: "Product Service Development",
     jobTitle: "Project Manager",
     status: "ACTIVE",
     isVerified: true,
@@ -88,6 +97,7 @@ const data: CompanyEmployee[] = [
     email: "olivia.taylor@example.com",
     companyId: "company2",
     phone: "555-444-3333",
+    department: "Product Service Development",
     jobTitle: "Marketing Specialist",
     status: "ACTIVE",
     isVerified: true,
@@ -99,6 +109,7 @@ const data: CompanyEmployee[] = [
     email: "james.anderson@example.com",
     companyId: "company1",
     phone: "888-777-6666",
+    department: "Product Service Development",
     jobTitle: "UI/UX Designer",
     status: "ACTIVE",
     isVerified: true,
@@ -110,6 +121,7 @@ const data: CompanyEmployee[] = [
     email: "chloe.green@example.com",
     companyId: "company3",
     phone: "111-333-5555",
+    department: "Product Service Development",
     jobTitle: "Data Analyst",
     status: "ACTIVE",
     isVerified: true,
@@ -121,6 +133,7 @@ const data: CompanyEmployee[] = [
     email: "ethan.turner@example.com",
     companyId: "company2",
     phone: "666-555-4444",
+    department: "Product Service Development",
     jobTitle: "Software Engineer",
     status: "ACTIVE",
     isVerified: true,
@@ -132,6 +145,7 @@ const data: CompanyEmployee[] = [
     email: "sophia.miller@example.com",
     companyId: "company1",
     phone: "999-888-7777",
+    department: "Product Service Development",
     jobTitle: "Project Manager",
     status: "ACTIVE",
     isVerified: true,
@@ -143,6 +157,7 @@ const data: CompanyEmployee[] = [
     email: "william.jackson@example.com",
     companyId: "company3",
     phone: "333-444-5555",
+    department: "Product Service Development",
     jobTitle: "Marketing Manager",
     status: "ACTIVE",
     isVerified: true,
@@ -154,6 +169,7 @@ const data: CompanyEmployee[] = [
     email: "amelia.harris@example.com",
     companyId: "company2",
     phone: "444-333-2222",
+    department: "Product Service Development",
     jobTitle: "UI/UX Designer",
     status: "ACTIVE",
     isVerified: true,
@@ -165,6 +181,7 @@ const data: CompanyEmployee[] = [
     email: "noah.martinez@example.com",
     companyId: "company1",
     phone: "777-666-5555",
+    department: "Product Service Development",
     jobTitle: "Data Analyst",
     status: "ACTIVE",
     isVerified: true,
@@ -176,6 +193,7 @@ const data: CompanyEmployee[] = [
     email: "olivia.johnson@example.com",
     companyId: "company3",
     phone: "222-555-3333",
+    department: "Product Service Development",
     jobTitle: "Software Engineer",
     status: "ACTIVE",
     isVerified: true,
@@ -187,6 +205,7 @@ const data: CompanyEmployee[] = [
     email: "elijah.brown@example.com",
     companyId: "company2",
     phone: "555-222-1111",
+    department: "Product Service Development",
     jobTitle: "Project Manager",
     status: "ACTIVE",
     isVerified: true,
@@ -199,6 +218,22 @@ function CompanyEmployees() {
     <>
       <CompanyDashboardLayout>
         <section className="companyEmployees p-3">
+          <div className="companyEmployeesHeader flex justify-between mb-5 mt-2 items-end">
+            <div>
+              <h1 className="text-2xl font-semibold mb-1">Employees</h1>
+              <p className="text-muted-foreground">
+                List of all employees below.
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <Button>
+                <CirclePlus /> Add Employee
+              </Button>
+              <Button variant="outline">
+                <ArrowDownToLine /> Download Excel
+              </Button>
+            </div>
+          </div>
           <CompanyEmployeeTable data={data} />
         </section>
       </CompanyDashboardLayout>

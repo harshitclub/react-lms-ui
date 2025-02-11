@@ -1,3 +1,5 @@
+import { departments } from "../../../constants/departments";
+import { gender, status } from "../../../constants/general";
 import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
 import {
@@ -7,57 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../ui/select";
-
-const departments = [
-  { value: "Administrative", label: "Administrative" },
-  { value: "HR", label: "HR" },
-  { value: "Operations_Delivery", label: "Operations Delivery" },
-  {
-    value: "Product_Service_Development",
-    label: "Product Service Development",
-  },
-  { value: "Purchasing", label: "Purchasing" },
-  { value: "Sales", label: "Sales" },
-  { value: "Marketing", label: "Marketing" },
-  { value: "Accounting", label: "Accounting" },
-  { value: "Finance", label: "Finance" },
-  { value: "IT", label: "IT" },
-  { value: "Legal", label: "Legal" },
-  { value: "Research_and_Development", label: "Research and Development" },
-  { value: "Customer_Service", label: "Customer Service" },
-  { value: "Training", label: "Training" },
-  { value: "Quality_Assurance", label: "Quality Assurance" },
-  { value: "Manufacturing", label: "Manufacturing" },
-  { value: "Engineering", label: "Engineering" },
-  { value: "Logistics", label: "Logistics" },
-  { value: "Facilities", label: "Facilities" },
-  { value: "Security", label: "Security" },
-  { value: "Project_Management", label: "Project Management" },
-  {
-    value: "Public_Relations_Communications",
-    label: "Public Relations Communications",
-  },
-  { value: "Investor_Relations", label: "Investor Relations" },
-  { value: "Compliance", label: "Compliance" },
-];
-
-const status = [
-  {
-    value: "ACTIVE",
-    label: "ACTIVE",
-  },
-  { value: "INACTIVE", label: "INACTIVE" },
-  { value: "BLOCKED", label: "BLOCKED" },
-];
-
-const gender = [
-  {
-    value: "MALE",
-    label: "MALE",
-  },
-  { value: "FEMALE", label: "FEMALE" },
-  { value: "Other", label: "Other" },
-];
 
 function CompanyCreateEmployeeForm() {
   return (

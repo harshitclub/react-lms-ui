@@ -1,8 +1,10 @@
+import { CirclePlus } from "lucide-react";
 import AdminDashboardLayout from "../../../components/admin/AdminDashboardLayout/AdminDashboardLayout";
 import {
   AdminEmployee,
   AdminEmployeeTable,
 } from "../../../components/admin/adminTable/employeeTable";
+import { Button } from "../../../components/ui/button";
 
 const data: AdminEmployee[] = [
   {
@@ -216,6 +218,12 @@ function AdminEmployees() {
     <>
       <AdminDashboardLayout>
         <section className="adminEmployees p-3">
+          <div className="adminEmployeesHeader flex justify-between mb-5 mt-2">
+            <h1 className="text-3xl font-semibold">Employees</h1>
+            <Button>
+              <CirclePlus /> Add Employee
+            </Button>
+          </div>
           <AdminEmployeeTable data={data} />
         </section>
       </AdminDashboardLayout>

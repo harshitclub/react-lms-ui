@@ -1,9 +1,11 @@
+import { CirclePlus } from "lucide-react";
 import AdminDashboardLayout from "../../../components/admin/AdminDashboardLayout/AdminDashboardLayout";
 
 import {
   AdminCompanyTable,
   Company,
 } from "../../../components/admin/adminTable/companyTable";
+import { Button } from "../../../components/ui/button";
 
 const data: Company[] = [
   {
@@ -244,6 +246,12 @@ function AdminCompanies() {
     <>
       <AdminDashboardLayout>
         <section className="adminCompanies p-3">
+          <div className="adminCompaniesHeader flex justify-between mb-5 mt-2">
+            <h1 className="text-3xl font-semibold">Companies</h1>
+            <Button>
+              <CirclePlus /> Add Company
+            </Button>
+          </div>
           <AdminCompanyTable data={data} />
         </section>
       </AdminDashboardLayout>

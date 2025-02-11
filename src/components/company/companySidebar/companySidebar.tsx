@@ -3,6 +3,7 @@ import {
   BriefcaseBusiness,
   ChevronRight,
   CircleHelp,
+  KeyRound,
   LayoutDashboard,
   Menu,
   Plus,
@@ -30,6 +31,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "../../ui/collapsible";
+import { Link } from "react-router";
 
 export function CompanySidebar() {
   return (
@@ -53,10 +55,10 @@ export function CompanySidebar() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
-                <a href="/company">
+                <Link to="/company">
                   <LayoutDashboard />
                   <span>Dashboard</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
 
@@ -75,16 +77,16 @@ export function CompanySidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/company/employees">
+                        <Link to="/company/employees">
                           <Menu />
                           <span>Employees</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                       <SidebarMenuSubButton asChild>
-                        <a href="/company/employees/add">
+                        <Link to="/company/employees/add">
                           <Plus />
                           <span>Add Employee</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -107,16 +109,16 @@ export function CompanySidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/company/courses">
+                        <Link to="/company/courses">
                           <Menu />
                           <span>Courses</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                       <SidebarMenuSubButton asChild>
-                        <a href="/company/courses/add">
+                        <Link to="/company/courses/add">
                           <Plus />
                           <span>Add Course</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -137,10 +139,10 @@ export function CompanySidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin">
+                        <Link to="/company">
                           <Menu />
                           <span>Videos</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -160,10 +162,10 @@ export function CompanySidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin">
+                        <Link to="/company">
                           <Menu />
                           <span>Assessments</span>
-                        </a>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -185,10 +187,22 @@ export function CompanySidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <a href="/admin">
+                        <Link to="/company/account">
                           <UserCog />
                           <span>Account</span>
-                        </a>
+                        </Link>
+                      </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                  </SidebarMenuSub>
+                </CollapsibleContent>
+                <CollapsibleContent>
+                  <SidebarMenuSub>
+                    <SidebarMenuSubItem>
+                      <SidebarMenuSubButton asChild>
+                        <Link to="/company/change-password">
+                          <KeyRound />
+                          <span>Password</span>
+                        </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   </SidebarMenuSub>
@@ -198,10 +212,10 @@ export function CompanySidebar() {
 
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
-                <a href="/admin">
+                <Link to="/company">
                   <CircleHelp />
                   <span>Help Center</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>

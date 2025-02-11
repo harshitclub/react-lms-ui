@@ -16,6 +16,10 @@ import AdminCourses from "./pages/admin/courses/AdminCourses";
 import CompanyEmployees from "./pages/company/employees/CompanyEmployees";
 import CompanyCreateEmployee from "./pages/company/employees/CreateEmployee";
 import CompanyCourses from "./pages/company/courses/CompanyCourses";
+import AdminProfile from "./pages/admin/profile/AdminProfile";
+import CompanyAccount from "./pages/company/account/CompanyAccount";
+import CompanyChangePassword from "./pages/company/account/CompanyChangePassword";
+import CompanyEmployeeProfile from "./pages/company/employees/CompanyEmployeeProfile";
 
 function App() {
   return (
@@ -37,13 +41,23 @@ function App() {
           element={<AdminCreateIndividual />}
         />
         <Route path="/admin/courses" element={<AdminCourses />} />
+        <Route path="/admin/profile" element={<AdminProfile />} />
         <Route path="/company" element={<CompanyDashboard />} />
         <Route path="/company/employees" element={<CompanyEmployees />} />
         <Route
           path="/company/employees/add"
           element={<CompanyCreateEmployee />}
         />
+        <Route
+          path="/company/employees/:id"
+          element={<CompanyEmployeeProfile />}
+        />
         <Route path="/company/courses" element={<CompanyCourses />} />
+        <Route path="/company/account" element={<CompanyAccount />} />
+        <Route
+          path="/company/change-password"
+          element={<CompanyChangePassword />}
+        />
       </Routes>
     </>
   );

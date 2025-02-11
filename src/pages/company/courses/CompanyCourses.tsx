@@ -98,7 +98,7 @@ function CompanyCourses() {
       <CompanyDashboardLayout>
         <section className="companyCourses p-3">
           <div className="companyCoursesHeading">
-            <h1 className="text-3xl font-semibold">Courses</h1>
+            <h1 className="text-2xl font-semibold mb-1">Courses</h1>
             <p className="mb-3 text-muted-foreground">
               A list of all your courses.
             </p>

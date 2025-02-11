@@ -1,7 +1,7 @@
 import { useLocation } from "react-router";
 import { SidebarTrigger } from "../../ui/sidebar";
 import { ModeToggle } from "../../shared/mode-toggle";
-import { Avatar, AvatarFallback } from "../../ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -79,6 +79,8 @@ function DashNav() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Avatar className="cursor-pointer">
+                  <AvatarImage src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTg1OGxha28wMXEwd21qeXlldm5taHFsc2sxZ3I5b2F0N2x2OWtyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZXkraFrlIW1D25M6ZJ/giphy.gif" />
+
                   <AvatarFallback>3a</AvatarFallback>
                 </Avatar>
               </DropdownMenuTrigger>

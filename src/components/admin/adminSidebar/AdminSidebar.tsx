@@ -43,7 +43,7 @@ export function AdminSidebar() {
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
                 <span>
-                  <BriefcaseBusiness /> 3a Learning Solutions
+                  <BriefcaseBusiness /> 3a
                 </span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -248,7 +248,7 @@ export function AdminSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <Link to="/admin">
+                        <Link to="/admin/profile">
                           <UserCog />
                           <span>Account</span>
                         </Link>

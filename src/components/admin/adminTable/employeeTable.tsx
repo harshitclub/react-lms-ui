@@ -58,6 +58,13 @@ export function AdminEmployeeTable({ data }: { data: AdminEmployee[] }) {
   const [rowSelection, setRowSelection] = React.useState({});
   const columns: ColumnDef<AdminEmployee>[] = [
     {
+      id: "sno",
+      header: "S.No.",
+      cell: ({ row }) => <div>{row.index + 1}</div>,
+      enableSorting: false,
+      enableHiding: false,
+    },
+    {
       id: "select",
       header: ({ table }) => (
         <Checkbox
@@ -79,6 +86,7 @@ export function AdminEmployeeTable({ data }: { data: AdminEmployee[] }) {
       enableSorting: false,
       enableHiding: false,
     },
+
     {
       accessorKey: "fullName",
       header: "Name",

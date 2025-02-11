@@ -57,6 +57,13 @@ export function AdminCompanyTable({ data }: { data: Company[] }) {
   const [rowSelection, setRowSelection] = React.useState({});
   const columns: ColumnDef<Company>[] = [
     {
+      id: "sno",
+      header: "S.No.",
+      cell: ({ row }) => <div>{row.index + 1}</div>,
+      enableSorting: false,
+      enableHiding: false,
+    },
+    {
       id: "select",
       header: ({ table }) => (
         <Checkbox

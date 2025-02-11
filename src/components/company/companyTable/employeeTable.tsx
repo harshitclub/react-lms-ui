@@ -10,7 +10,6 @@ import {
 } from "../../ui/dropdown-menu";
 import { Button } from "../../ui/button";
 import { ChevronDown, Dot, MoreHorizontal } from "lucide-react";
-import { Checkbox } from "../../ui/checkbox";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -34,6 +33,7 @@ import {
 } from "../../ui/table";
 import { Input } from "../../ui/input";
 import React from "react";
+import { Link } from "react-router";
 
 export type CompanyEmployee = {
   id?: string;
@@ -41,6 +41,7 @@ export type CompanyEmployee = {
   email: string;
   companyId: string;
   phone: string;
+  department: string;
   jobTitle: string;
   status: "ACTIVE" | "INACTIVE" | "BLOCKED";
   isVerified: boolean;
@@ -57,27 +58,13 @@ export function CompanyEmployeeTable({ data }: { data: CompanyEmployee[] }) {
   const [rowSelection, setRowSelection] = React.useState({});
   const columns: ColumnDef<CompanyEmployee>[] = [
     {
-      id: "select",
-      header: ({ table }) => (
-        <Checkbox
-          checked={
-            table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && "indeterminate")
-          }
-          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Select all"
-        />
-      ),
-      cell: ({ row }) => (
-        <Checkbox
-          checked={row.getIsSelected()}
-          onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
-        />
-      ),
+      id: "sno",
+      header: () => <div className="text-center">S.No.</div>,
+      cell: ({ row }) => <div className="text-center">{row.index + 1}</div>,
       enableSorting: false,
       enableHiding: false,
     },
+
     {
       accessorKey: "fullName",
       header: "Name",
@@ -101,6 +88,13 @@ export function CompanyEmployeeTable({ data }: { data: CompanyEmployee[] }) {
       ),
     },
     {
+      accessorKey: "department",
+      header: "Department",
+      cell: ({ row }) => (
+        <div className="capitialize">{row.getValue("department")}</div>
+      ),
+    },
+    {
       accessorKey: "phone",
       header: () => <div className="text-left">Phone</div>,
       cell: ({ row }) => {
@@ -109,6 +103,7 @@ export function CompanyEmployeeTable({ data }: { data: CompanyEmployee[] }) {
         );
       },
     },
+
     {
       accessorKey: "status",
       header: "Status",
@@ -121,12 +116,19 @@ export function CompanyEmployeeTable({ data }: { data: CompanyEmployee[] }) {
         </div>
       ),
     },
+    {
+      accessorKey: "createdAt",
+      header: "Created At",
+      cell: ({ row }) => (
+        <div>{new Date(row.getValue("createdAt")).toLocaleDateString()}</div>
+      ),
+    },
 
     {
       id: "actions",
       enableHiding: false,
       cell: ({ row }) => {
-        const company = row.original;
+        const employee = row.original;
 
         return (
           <DropdownMenu>
@@ -139,12 +141,16 @@ export function CompanyEmployeeTable({ data }: { data: CompanyEmployee[] }) {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Actions</DropdownMenuLabel>
               <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(company.email)}
+                onClick={() => navigator.clipboard.writeText(employee.email)}
               >
                 Copy Email
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>View Employee</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link to={`/company/employees/${employee.id}`}>
+                  View Employee
+                </Link>
+              </DropdownMenuItem>
               <DropdownMenuItem>View payment details</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -234,7 +240,7 @@ export function CompanyEmployeeTable({ data }: { data: CompanyEmployee[] }) {
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
+                  // data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
