@@ -20,6 +20,7 @@ import AdminProfile from "./pages/admin/profile/AdminProfile";
 import CompanyAccount from "./pages/company/account/CompanyAccount";
 import CompanyChangePassword from "./pages/company/account/CompanyChangePassword";
 import CompanyEmployeeProfile from "./pages/company/employees/CompanyEmployeeProfile";
+import CompanyCreateCourse from "./pages/company/courses/CreateCourse";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           element={<CompanyEmployeeProfile />}
         />
         <Route path="/company/courses" element={<CompanyCourses />} />
+        <Route path="/company/courses/add" element={<CompanyCreateCourse />} />
         <Route path="/company/account" element={<CompanyAccount />} />
         <Route
           path="/company/change-password"
