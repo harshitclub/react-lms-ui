@@ -12,7 +12,7 @@ function SignupForm() {
   return (
     <>
       <div className="authForm width100 flex alignCenter justifyCenter flexColumn">
-        <form className="width50">
+        <form className="width60">
           <h1 className="scroll-m-20  pb-2 mb-2 text-2xl font-bold tracking-tight first:mt-0 text-center border-b">
             Create an account
           </h1>

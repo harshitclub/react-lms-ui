@@ -26,6 +26,7 @@ import {
 } from "../../ui/breadcrumb";
 import React from "react";
 import CapitalizeFirstLetter from "../../shared/capitalizeFirstLetter";
+import { Button } from "../../ui/button";
 
 function DashNav() {
   const location = useLocation();
@@ -124,9 +125,10 @@ function DashNav() {
                 <DropdownMenuItem>Courses</DropdownMenuItem>
 
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  Log out
-                  {/* <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut> */}
+                <DropdownMenuItem className="p-0">
+                  <Button variant="destructive" className="w-full">
+                    Logout
+                  </Button>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

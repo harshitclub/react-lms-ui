@@ -26,6 +26,7 @@ import {
 import React from "react";
 import { useLocation } from "react-router";
 import CapitalizeFirstLetter from "../../shared/capitalizeFirstLetter";
+import { Button } from "../../ui/button";
 
 function DashCompanyNav() {
   const location = useLocation();
@@ -108,9 +109,10 @@ function DashCompanyNav() {
                 <DropdownMenuItem>Courses</DropdownMenuItem>
 
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  Log out
-                  {/* <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut> */}
+                <DropdownMenuItem className="p-0">
+                  <Button variant="destructive" className="w-full">
+                    Logout
+                  </Button>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
