@@ -7,7 +7,7 @@ function CompanyCreateCourse() {
       <CompanyDashboardLayout>
         <section className="companyCreateCourse p-3">
           <h1 className="text-2xl font-semibold mb-1 pt-2">Create Course</h1>
-          <p className="text-muted-foreground border-b pb-5">
+          <p className="text-muted-foreground pb-5">
             Enter all the required details below to create a course.
           </p>
           <div className="cccAdd">
