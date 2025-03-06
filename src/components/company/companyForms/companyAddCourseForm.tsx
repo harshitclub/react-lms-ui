@@ -72,7 +72,59 @@ function CompanyAddCourseForm() {
             <div className="flex gap-3">
               <div className="w-1/2 mb-4">
                 <h3 className="text-md  mb-1 ">Duration</h3>
-                <Input type="text" placeholder="ex. 1 Hour" />
+                <div className="flex gap-3">
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Hours" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Hours*</SelectLabel>
+                        {Array.from({ length: 100 }, (_, i) => i + 1).map(
+                          (hour) => (
+                            <SelectItem key={hour} value={hour.toString()}>
+                              {hour} Hours
+                            </SelectItem>
+                          )
+                        )}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Minutes" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Minutes*</SelectLabel>
+                        {Array.from({ length: 60 }, (_, i) => i + 1).map(
+                          (minute) => (
+                            <SelectItem key={minute} value={minute.toString()}>
+                              {minute} Minutes
+                            </SelectItem>
+                          )
+                        )}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                  <Select>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Seconds" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Seconds*</SelectLabel>
+                        {Array.from({ length: 60 }, (_, i) => i + 1).map(
+                          (second) => (
+                            <SelectItem key={second} value={second.toString()}>
+                              {second} Seconds
+                            </SelectItem>
+                          )
+                        )}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
               <div className="w-1/2">
                 <h3 className="text-md  mb-1 ">Status</h3>
@@ -83,8 +135,8 @@ function CompanyAddCourseForm() {
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Status</SelectLabel>
-                      <SelectItem value="apple">Draft</SelectItem>
-                      <SelectItem value="apple">Published</SelectItem>
+                      <SelectItem value="Draft">Draft</SelectItem>
+                      <SelectItem value="Published">Published</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>

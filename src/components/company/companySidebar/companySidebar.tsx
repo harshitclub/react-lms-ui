@@ -139,9 +139,17 @@ export function CompanySidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <Link to="/company">
+                        <Link to="/company/videos">
                           <Menu />
                           <span>Videos</span>
+                        </Link>
+                      </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                    <SidebarMenuSubItem>
+                      <SidebarMenuSubButton asChild>
+                        <Link to="/company/videos/add">
+                          <Plus />
+                          <span>Add Videos</span>
                         </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
@@ -162,9 +170,17 @@ export function CompanySidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton asChild>
-                        <Link to="/company">
+                        <Link to="/company/assessments">
                           <Menu />
                           <span>Assessments</span>
+                        </Link>
+                      </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                    <SidebarMenuSubItem>
+                      <SidebarMenuSubButton asChild>
+                        <Link to="/company/assessments/add">
+                          <Plus />
+                          <span>Add Assessments</span>
                         </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>

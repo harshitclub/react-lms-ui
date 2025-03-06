@@ -1,13 +1,13 @@
-import CompanyDashboardLayout from "../../../components/company/companyDashboardLayout/companyDashboardLayout";
-import CompanyEmployeeForm from "../../../components/company/companyForms/companyEmployeeForm";
+import AdminDashboardLayout from "../../../components/admin/AdminDashboardLayout/AdminDashboardLayout";
+import AdminEmployeeForm from "../../../components/admin/adminForms/adminEmployeeForm";
 import { Button } from "../../../components/ui/button";
 
-function CompanyEmployeeProfile() {
+function AdminEmployee() {
   return (
     <>
-      <CompanyDashboardLayout>
-        <section className="companyEmployeeProfile p-3">
-          <div className="cepHeader flex justify-between items-end pb-5">
+      <AdminDashboardLayout>
+        <section className="adminEmployee p-3">
+          <div className="acHeader flex justify-between items-end pb-5">
             <div>
               <h1 className="text-2xl font-semibold mb-1 pt-2 flex alignCenter justify-between">
                 John Doe
@@ -21,11 +21,11 @@ function CompanyEmployeeProfile() {
               <Button variant="destructive">Delete Employee</Button>
             </div>
           </div>
-          <CompanyEmployeeForm />
+          <AdminEmployeeForm />
         </section>
-      </CompanyDashboardLayout>
+      </AdminDashboardLayout>
     </>
   );
 }
 
-export default CompanyEmployeeProfile;
+export default AdminEmployee;

@@ -21,6 +21,9 @@ import CompanyAccount from "./pages/company/account/CompanyAccount";
 import CompanyChangePassword from "./pages/company/account/CompanyChangePassword";
 import CompanyEmployeeProfile from "./pages/company/employees/CompanyEmployeeProfile";
 import CompanyCreateCourse from "./pages/company/courses/CreateCourse";
+import AdminCompany from "./pages/admin/companies/AdminCompany";
+import AdminEmployee from "./pages/admin/employees/AdminEmployee";
+import AdminIndividual from "./pages/admin/individuals/AdminIndividual";
 
 function App() {
   return (
@@ -33,10 +36,13 @@ function App() {
         <Route path="/verify/:token" element={<VerifyAccount />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/companies" element={<AdminCompanies />} />
+        <Route path="/admin/companies/:id" element={<AdminCompany />} />
         <Route path="/admin/companies/add" element={<AdminCreateCompany />} />
         <Route path="/admin/employees" element={<AdminEmployees />} />
+        <Route path="/admin/employees/:id" element={<AdminEmployee />} />
         <Route path="/admin/employees/add" element={<AdminCreateEmployee />} />
         <Route path="/admin/individuals" element={<AdminIndividuals />} />
+        <Route path="/admin/individuals/:id" element={<AdminIndividual />} />
         <Route
           path="/admin/individuals/add"
           element={<AdminCreateIndividual />}

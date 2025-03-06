@@ -33,6 +33,7 @@ import {
 } from "../../ui/table";
 import { Input } from "../../ui/input";
 import React from "react";
+import { Link } from "react-router";
 
 export type AdminEmployee = {
   id?: string;
@@ -136,7 +137,9 @@ export function AdminEmployeeTable({ data }: { data: AdminEmployee[] }) {
                 Copy Email
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>View Employee</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link to="/admin/employees/dkdjkfd">View Employee</Link>
+              </DropdownMenuItem>
               <DropdownMenuItem>View payment details</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
