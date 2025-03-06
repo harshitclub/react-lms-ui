@@ -4,6 +4,7 @@ import {
   Building2,
   ChevronRight,
   CircleHelp,
+  KeyRound,
   LayoutDashboard,
   Menu,
   Plus,
@@ -251,6 +252,14 @@ export function AdminSidebar() {
                         <Link to="/admin/profile">
                           <UserCog />
                           <span>Account</span>
+                        </Link>
+                      </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                    <SidebarMenuSubItem>
+                      <SidebarMenuSubButton asChild>
+                        <Link to="/admin/change-password">
+                          <KeyRound />
+                          <span>Password</span>
                         </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>

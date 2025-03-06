@@ -24,6 +24,7 @@ import CompanyCreateCourse from "./pages/company/courses/CreateCourse";
 import AdminCompany from "./pages/admin/companies/AdminCompany";
 import AdminEmployee from "./pages/admin/employees/AdminEmployee";
 import AdminIndividual from "./pages/admin/individuals/AdminIndividual";
+import AdminChangePassword from "./pages/admin/profile/AdminChangePassword";
 
 function App() {
   return (
@@ -49,6 +50,10 @@ function App() {
         />
         <Route path="/admin/courses" element={<AdminCourses />} />
         <Route path="/admin/profile" element={<AdminProfile />} />
+        <Route
+          path="/admin/change-password"
+          element={<AdminChangePassword />}
+        />
         <Route path="/company" element={<CompanyDashboard />} />
         <Route path="/company/employees" element={<CompanyEmployees />} />
         <Route
