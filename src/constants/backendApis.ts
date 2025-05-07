@@ -1,5 +1,8 @@
 const backendApiV1 = "http://localhost:5000/api/v1";
 export const backendUrl = {
+  auth: {
+    login: `${backendApiV1}/auth/login`,
+  },
   admin: {
     signup: `${backendApiV1}/admin/signup`,
     login: `${backendApiV1}/admin/login`,

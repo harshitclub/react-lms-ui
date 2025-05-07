@@ -9,7 +9,7 @@ import { backendUrl } from "../../../constants/backendApis";
 import { useNavigate } from "react-router";
 
 function LoginForm() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({
     email: "",
@@ -20,23 +20,30 @@ function LoginForm() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post(`${backendUrl.admin.login}`, user);
+      const res = await axios.post(`${backendUrl.auth.login}`, user, {
+        withCredentials: true, // Include cookies for authentication
+      });
+
       setTimeout(() => {
         navigate("/admin");
       }, 1000);
 
       // await new Promise((resolve) => setTimeout(resolve, 3000));
       console.log("Form Data:", user);
-      toast.success("Login Success");
+      toast.success(res.data.message);
       setUser({
         email: "",
         password: "",
       });
     } catch (error) {
-      console.error("Error during form submission:", error);
+      console.error(error);
       toast.error("Form submission failed");
     } finally {
       setLoading(false); // Set loading to false
+      setUser({
+        email: "",
+        password: "",
+      });
     }
   };
 
