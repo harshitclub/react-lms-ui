@@ -18,34 +18,37 @@ import {
   TableRow,
 } from "../../../components/ui/table";
 import { Button } from "../../../components/ui/button";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { backendUrl } from "../../../constants/backendApis";
 
 const recentCompanies = [
   {
-    companyId: "CS00TT",
+    companyId: "CS00HT",
     fullName: "Campus Sutras",
     plan: "TRIAL",
     email: "campussutrasindia@gmail.com",
   },
   {
-    companyId: "CS00TT",
+    companyId: "CS00IT",
     fullName: "Campus Sutras",
     plan: "TRIAL",
     email: "campussutrasindia@gmail.com",
   },
   {
-    companyId: "CS00TT",
+    companyId: "CS00JT",
     fullName: "Campus Sutras",
     plan: "TRIAL",
     email: "campussutrasindia@gmail.com",
   },
   {
-    companyId: "CS00TT",
+    companyId: "CS00KT",
     fullName: "Campus Sutras",
     plan: "TRIAL",
     email: "campussutrasindia@gmail.com",
   },
   {
-    companyId: "CS00TT",
+    companyId: "CS00LT",
     fullName: "Campus Sutras",
     plan: "TRIAL",
     email: "campussutrasindia@gmail.com",
@@ -91,6 +94,44 @@ const recentIndividuals = [
 ];
 
 function AdminDashboard() {
+  const [totalCompanies, setTotalCompanies] = useState(0);
+  const [totalEmployees, setTotalEmployees] = useState(0);
+  const [totalIndividuals, setTotalIndividuals] = useState(0);
+
+  const fetchData = async () => {
+    try {
+      const companies = await axios.get(
+        `${backendUrl.admin.totalCompaniesNumber}`,
+        {
+          withCredentials: true,
+        }
+      );
+      const employees = await axios.get(
+        `${backendUrl.admin.totalEmployeesNumber}`,
+        {
+          withCredentials: true,
+        }
+      );
+      const individuals = await axios.get(
+        `${backendUrl.admin.totalIndividualNumber}`,
+        {
+          withCredentials: true,
+        }
+      );
+      const totalCompanies = Number(companies.data.data.users);
+      const totalEmployees = Number(employees.data.data.users);
+      const totalIndividuals = Number(individuals.data.data.users);
+      setTotalCompanies(totalCompanies);
+      setTotalEmployees(totalEmployees);
+      setTotalIndividuals(totalIndividuals);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
       <AdminDashboardLayout>
@@ -113,7 +154,7 @@ function AdminDashboard() {
                 </div>
                 <div className="p-6 pt-0 space-y-2">
                   <div className="text-3xl font-bold">
-                    <span className="">54</span>
+                    <span className="">{totalCompanies}</span>
                   </div>
                   <p className="text-xs text-muted-foreground">
                     <span className="text-green-600">+20.1%</span> from last
@@ -132,7 +173,7 @@ function AdminDashboard() {
                 </div>
                 <div className="p-6 pt-0 space-y-2">
                   <div className="text-3xl font-bold">
-                    <span className="">66</span>
+                    <span className="">{totalEmployees}</span>
                   </div>
                   <p className="text-xs text-muted-foreground">
                     <span className="text-green-600">+180.1%</span> from last
@@ -151,7 +192,7 @@ function AdminDashboard() {
                 </div>
                 <div className="p-6 pt-0 space-y-2">
                   <div className="text-3xl font-bold">
-                    <span className="">23</span>
+                    <span className="">{totalIndividuals}</span>
                   </div>
                   <p className="text-xs text-muted-foreground">
                     <span className="text-red-600">-19%</span> from last month
@@ -169,7 +210,7 @@ function AdminDashboard() {
                 </div>
                 <div className="p-6 pt-0 space-y-2">
                   <div className="text-3xl font-bold">
-                    <span className="">34</span>
+                    <span className="">0</span>
                   </div>
                   <p className="text-xs text-muted-foreground">
                     <span className="text-green-600">+20.1%</span> from last
