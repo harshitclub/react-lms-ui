@@ -16,7 +16,7 @@ export const backendUrl = {
     changePassword: `${backendApiV1}/admin/me/change-password`,
     createCompany: `${backendApiV1}/admin/companies`,
     getCompanies: `${backendApiV1}/admin/companies`,
-    getCompanyById: `${backendApiV1}/admin/companies/:companyId`,
+    getCompanyById: `${backendApiV1}/admin/companies`,
     updateCompany: `${backendApiV1}/admin/companies/:companyId`,
     deleteCompany: `${backendApiV1}/admin/companies/:companyId`,
     changeCompanyPlan: `${backendApiV1}/admin/companies/:companyId/change-plan`,

@@ -99,11 +99,32 @@ export function AdminIndividualTable({ data }: { data: Individual[] }) {
       ),
     },
     {
+      accessorKey: "isVerified",
+      header: "Verified",
+      cell: ({ row }) => {
+        const verified = row.getValue("isVerified") as boolean;
+        const formattedValue = verified ? (
+          <Badge variant="secondary">
+            Verified
+            <Dot style={{ color: "green" }} />
+          </Badge>
+        ) : (
+          <Badge variant="secondary">
+            Unverified
+            <Dot style={{ color: "red" }} />
+          </Badge>
+        );
+        return <div className="uppercase">{formattedValue}</div>;
+      },
+    },
+    {
       accessorKey: "createdAt",
       header: "Created At",
-      cell: ({ row }) => (
-        <div className="lowercase">{row.getValue("createdAt")}</div>
-      ),
+      cell: ({ row }) => {
+        const createdAtValue = row.getValue("createdAt") as string;
+        const formattedDate = createdAtValue.split("T")[0];
+        return <div className="capitalize">{formattedDate}</div>;
+      },
     },
     {
       id: "actions",
@@ -130,7 +151,7 @@ export function AdminIndividualTable({ data }: { data: Individual[] }) {
               <DropdownMenuItem>
                 <Link to="/admin/individuals/dkfjdf">View Individual</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>View payment details</DropdownMenuItem>
+              {/* <DropdownMenuItem>View payment details</DropdownMenuItem> */}
             </DropdownMenuContent>
           </DropdownMenu>
         );

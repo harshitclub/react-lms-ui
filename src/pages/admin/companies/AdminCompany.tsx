@@ -10,7 +10,7 @@ function AdminCompany() {
           <div className="acHeader flex justify-between items-end pb-5">
             <div>
               <h1 className="text-2xl font-semibold mb-1 pt-2 flex alignCenter justify-between">
-                CampusSutras Private Limited
+                Company Profile
               </h1>
               <p className="text-muted-foreground">
                 View & update company profile below.

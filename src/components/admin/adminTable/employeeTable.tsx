@@ -45,7 +45,9 @@ export type AdminEmployee = {
   status: "ACTIVE" | "INACTIVE" | "BLOCKED";
   isVerified: boolean;
   createdAt: string;
-  company: string;
+  company: {
+    fullName: string;
+  };
 };
 
 export function AdminEmployeeTable({ data }: { data: AdminEmployee[] }) {
@@ -112,14 +114,14 @@ export function AdminEmployeeTable({ data }: { data: AdminEmployee[] }) {
       accessorKey: "company",
       header: "Company",
       cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("company")}</div>
+        <div className="capitalize">{row.original.company.fullName}</div>
       ),
     },
     {
       id: "actions",
       enableHiding: false,
       cell: ({ row }) => {
-        const company = row.original;
+        const employee = row.original;
 
         return (
           <DropdownMenu>
@@ -132,15 +134,21 @@ export function AdminEmployeeTable({ data }: { data: AdminEmployee[] }) {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Actions</DropdownMenuLabel>
               <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(company.email)}
+                onClick={() => navigator.clipboard.writeText(employee.email)}
               >
                 Copy Email
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <Link to="/admin/employees/dkdjkfd">View Employee</Link>
+                <Link to={`/admin/employees/${employee.id}`}>
+                  View Employee
+                </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>View payment details</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link to={`/admin/companies/${employee.companyId}`}>
+                  View Company
+                </Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         );

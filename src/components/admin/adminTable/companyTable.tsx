@@ -126,9 +126,11 @@ export function AdminCompanyTable({ data }: { data: Company[] }) {
     {
       accessorKey: "createdAt",
       header: "Created At",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("createdAt")}</div>
-      ),
+      cell: ({ row }) => {
+        const createdAtValue = row.getValue("createdAt") as string;
+        const formattedDate = createdAtValue.split("T")[0];
+        return <div className="capitalize">{formattedDate}</div>;
+      },
     },
     {
       id: "actions",
@@ -153,7 +155,7 @@ export function AdminCompanyTable({ data }: { data: Company[] }) {
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <Link to="/admin/companies/jdkjkdf">View Company</Link>
+                <Link to={`/admin/companies/${company.id}`}>View Company</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>View payment details</DropdownMenuItem>
             </DropdownMenuContent>

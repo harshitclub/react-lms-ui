@@ -1,247 +1,28 @@
 import { CirclePlus } from "lucide-react";
 import AdminDashboardLayout from "../../../components/admin/AdminDashboardLayout/AdminDashboardLayout";
 
-import {
-  AdminCompanyTable,
-  Company,
-} from "../../../components/admin/adminTable/companyTable";
+import { AdminCompanyTable } from "../../../components/admin/adminTable/companyTable";
 import { Button } from "../../../components/ui/button";
-
-const data: Company[] = [
-  {
-    id: "djkjdfkjdfkj",
-    companyId: "m5gr84i9",
-    fullName: "Campussutras Private Limited",
-    email: "campussutras@gmail.com",
-    phone: "9876543210",
-    username: "campussutras",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "1234567890abcdef",
-    companyId: "abc123xyz",
-    fullName: "ABC Solutions",
-    email: "abc@solutions.com",
-    phone: "1234567890",
-    username: "abc_solutions",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "9876543210fedcba",
-    companyId: "xyz789abc",
-    fullName: "XYZ Corporation",
-    email: "xyz@corp.com",
-    phone: "9876543210",
-    username: "xyz_corp",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "qwertyuiopasdfghjkl",
-    companyId: "qwerty123",
-    fullName: "Qwerty Technologies",
-    email: "qwerty@tech.com",
-    phone: "1234567890",
-    username: "qwerty_tech",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "asdfghjklqwertyuiop",
-    companyId: "asdfg123",
-    fullName: "Asdfg Solutions",
-    email: "asdfg@solutions.com",
-    phone: "9876543210",
-    username: "asdfg_solutions",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "zxcvbnmasdfghjkl",
-    companyId: "zxcvb123",
-    fullName: "Zxcvb Enterprises",
-    email: "zxcvb@enterprises.com",
-    phone: "1234567890",
-    username: "zxcvb_enterprises",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "poiuytrewqasdfghjkl",
-    companyId: "poiuy123",
-    fullName: "Poiuyt Solutions",
-    email: "poiuyt@solutions.com",
-    phone: "9876543210",
-    username: "poiuyt_solutions",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "lkjhgfdsapoiuytrewq",
-    companyId: "lkjhgf123",
-    fullName: "Lkjhgf Technologies",
-    email: "lkjhgf@tech.com",
-    phone: "1234567890",
-    username: "lkjhgf_tech",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "mnbvcxzqwertyuiop",
-    companyId: "mnbvc123",
-    fullName: "Mnbvc Solutions",
-    email: "mnbvc@solutions.com",
-    phone: "9876543210",
-    username: "mnbvc_solutions",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "qwertyuiopmnbvcxz",
-    companyId: "qwerty123",
-    fullName: "Qwerty Technologies",
-    email: "qwerty@tech.com",
-    phone: "1234567890",
-    username: "qwerty_tech",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "asdfghjklzxcvbnm",
-    companyId: "asdfg123",
-    fullName: "Asdfg Solutions",
-    email: "asdfg@solutions.com",
-    phone: "9876543210",
-    username: "asdfg_solutions",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "zxcvbnmasdfghjkl",
-    companyId: "zxcvb123",
-    fullName: "Zxcvb Enterprises",
-    email: "zxcvb@enterprises.com",
-    phone: "1234567890",
-    username: "zxcvb_enterprises",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "poiuytrewqasdfghjkl",
-    companyId: "poiuy123",
-    fullName: "Poiuyt Solutions",
-    email: "poiuyt@solutions.com",
-    phone: "9876543210",
-    username: "poiuyt_solutions",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "lkjhgfdsapoiuytrewq",
-    companyId: "lkjhgf123",
-    fullName: "Lkjhgf Technologies",
-    email: "lkjhgf@tech.com",
-    phone: "1234567890",
-    username: "lkjhgf_tech",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "mnbvcxzqwertyuiop",
-    companyId: "mnbvc123",
-    fullName: "Mnbvc Solutions",
-    email: "mnbvc@solutions.com",
-    phone: "9876543210",
-    username: "mnbvc_solutions",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "qwertyuiopmnbvcxz",
-    companyId: "qwerty123",
-    fullName: "Qwerty Technologies",
-    email: "qwerty@tech.com",
-    phone: "1234567890",
-    username: "qwerty_tech",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "asdfghjklzxcvbnm",
-    companyId: "asdfg123",
-    fullName: "Asdfg Solutions",
-    email: "asdfg@solutions.com",
-    phone: "9876543210",
-    username: "asdfg_solutions",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "poiuytrewqasdfghjkl",
-    companyId: "poiuy123",
-    fullName: "Poiuyt Solutions",
-    email: "poiuyt@solutions.com",
-    phone: "9876543210",
-    username: "poiuyt_solutions",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "lkjhgfdsapoiuytrewq",
-    companyId: "lkjhgf123",
-    fullName: "Lkjhgf Technologies",
-    email: "lkjhgf@tech.com",
-    phone: "1234567890",
-    username: "lkjhgf_tech",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "mnbvcxzqwertyuiop",
-    companyId: "mnbvc123",
-    fullName: "Mnbvc Solutions",
-    email: "mnbvc@solutions.com",
-    phone: "9876543210",
-    username: "mnbvc_solutions",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-  {
-    id: "qwertyuiopmnbvcxz",
-    companyId: "qwerty123",
-    fullName: "Qwerty Technologies",
-    email: "qwerty@tech.com",
-    phone: "1234567890",
-    username: "qwerty_tech",
-    status: "ACTIVE",
-    isVerified: true,
-    createdAt: "2025-02-26",
-  },
-];
+import axios from "axios";
+import { backendUrl } from "../../../constants/backendApis";
+import { useEffect, useState } from "react";
 
 function AdminCompanies() {
+  const [companiesData, setCompaniesData] = useState([]);
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(`${backendUrl.admin.getCompanies}`, {
+        withCredentials: true,
+      });
+      setCompaniesData(res.data.data.users);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
       <AdminDashboardLayout>
@@ -252,7 +33,7 @@ function AdminCompanies() {
               <CirclePlus /> Add Company
             </Button>
           </div>
-          <AdminCompanyTable data={data} />
+          <AdminCompanyTable data={companiesData} />
         </section>
       </AdminDashboardLayout>
     </>
